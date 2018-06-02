@@ -8,36 +8,22 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
     <FrameLayout
         android:id="@+id/fl_one"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#ccc"
-        android:orientation="vertical">
+        android:orientation="vertical" />
 
 
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/fl_two"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#eee">
-
-
-    </FrameLayout>
-
-
-    <TextView
-        android:id="@+id/tv_label"
+    <Button
+        android:id="@+id/btn_add_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="8dp"
-        android:text="I AM IN ACTIVITY" />
+        android:text="Add Fragment..." />
 
 
 </LinearLayout>

@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mSampleBtn;
     public TextView mSampleText;
 
+    private int count;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,17 +24,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         init();
         initControl();
-
     }
 
     private void init() {
-        getSupportFragmentManager().beginTransaction().add(R.id.fl_one, FragmentOne.newInstance("one")).commit();
-        getSupportFragmentManager().beginTransaction().add(R.id.fl_two, new FragmentTwo()).commit();
-
-
+//        getSupportFragmentManager().beginTransaction().add(R.id.fl_one, FragmentOne.newInstance("one"))
+//                .addToBackStack(FragmentOne.TAG).commit();
+//        getSupportFragmentManager().beginTransaction().add(R.id.fl_two, new FragmentTwo()).commit();
     }
 
     private void initControl() {
+
+        findViewById(R.id.btn_add_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fl_one, FragmentOne.newInstance("Fragment: " + count++), FragmentOne.TAG + count)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     private void initView() {
@@ -79,4 +89,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                break;
 //        }
 //    }
+
+
 }

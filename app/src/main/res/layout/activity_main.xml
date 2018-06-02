@@ -8,21 +8,36 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv_sample"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hi...." />
 
-    <Button
-        android:id="@+id/btn_sample"
-        style="@style/ButtonStyle"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/fl_one"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ccc"
+        android:orientation="vertical">
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_two"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#eee">
+
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:padding="8dp"
-        android:text="@string/app_name"
-        android:textColor="@android:color/white" />
+        android:text="I AM IN ACTIVITY" />
 
 
 </LinearLayout>
